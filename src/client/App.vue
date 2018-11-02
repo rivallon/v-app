@@ -1,1 +1,3 @@
-import Vue fro 'vue';
+<template>
+  <div>App</div>  
+</template>
