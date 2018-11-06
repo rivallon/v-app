@@ -3,7 +3,7 @@ module.exports = {
     host: 'localhost',
     port: 9090,
     hot: true,
-    https: true,
+    https: false,
     open: false,
     overlay: {
       errors: true,

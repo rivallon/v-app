@@ -11,26 +11,31 @@ const port = (process.env.port && Number(process.env.port)) || config.dev.port |
 const resolve = (_path) => path.join(__dirname, '..', _path);
 
 const webpackDevConfig = Object.assign(webpackBaseConfig, {
-  // mode: 'development',
+  mode: 'development',
+  watchOptions: {
+    poll: true
+  },
   devServer: {
-    // clientLogLevel: 'warning',
-    // host,
-    // port,
+    clientLogLevel: 'warning',
+    host,
+    port,
+    filename: resolve('dist/bundle.js'),
     quite: true,
-    // compress: true,
-    // hot: config.dev.hot,
-    // https: config.dev.https,
-    // lazy: true,
-    // open: config.dev.open,
-    // overlay: config.dev.overlay,
-    // publicPath: resolve(config.dev.assetsPath)
+    compress: true,
+    hot: config.dev.hot,
+    https: config.dev.https,
+    lazy: true,
+    open: config.dev.open,
+    overlay: config.dev.overlay,
+    publicPath: '/'
   },
   plugins: [
-    // new HtmlWebpackPlugin({
-    //   filename: resolve('index.html'),
-    //   template: resolve('index.html'),
-    //   inject: true
-    // }),
+    new HtmlWebpackPlugin({
+      // filename: 'index.html',
+      template: resolve('index.html'),
+      minify: true,
+      // inject: true
+    }),
     new FriendlyErrorsPlugin({
       compilationSuccessInfo: {
         messages: [`Your application is running here: http://${host}:${port}`],

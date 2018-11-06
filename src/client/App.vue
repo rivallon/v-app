@@ -1,6 +1,20 @@
 <template>
-  <div class="label">App with Vue.js</div>  
+  <div class="label">{{ label }}</div>  
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      labal: 'App with Vue.js'
+    };
+  },
+  mounted() {
+    alert('Mounted!');
+  }
+};
+</script>
+
 
 <style scoped>
 .label {

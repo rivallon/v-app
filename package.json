@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Vue project",
   "scripts": {
-    "build": "webpack --config build/webpack.base.conf.js",
+    "build": "node ./build/build.js",
     "dev": "webpack-dev-server --config build/webpack.dev.conf.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
